@@ -1,0 +1,57 @@
+@startuml classes
+set namespaceSeparator none
+class "Background" as background.Background {
+  image
+  rect
+}
+class "Log" as log.Log {
+  draw(screen)
+  update(delta)
+}
+class "Player" as player.Player {
+  direction : int
+  image
+  invincible : bool
+  log : bool
+  rect
+  turtle : bool
+  down()
+  draw(screen)
+  in_water()
+  left()
+  reset()
+  right()
+  set_invincible(inv)
+  set_log(lo)
+  set_turtle(turt)
+  up()
+  update(delta)
+}
+class "Vehicle" as vehicle.Vehicle {
+  direction
+  image
+  players
+  rect
+  startLocation
+  draw(screen)
+  update(delta)
+}
+class "Turtle" as turtle.Turtle {
+  submerged : bool
+  is_submerged()
+  set_submerged(sub)
+  draw(screen)
+  update(delta)
+}
+class "Water_Object" as water_object.Water_Object {
+  direction
+  image
+  players
+  rect
+  startLocation
+  draw(screen)
+  update(delta)
+}
+log.Log --|> water_object.Water_Object
+turtle.Turtle  --|> water_object.Water_Object
+@enduml

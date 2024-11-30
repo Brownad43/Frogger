@@ -1,0 +1,24 @@
+@startuml packages
+set namespaceSeparator none
+package "background" as background {
+}
+package "log" as log {
+}
+package "main" as main {
+}
+package "player" as player {
+}
+package "turtle" as turtle {
+}
+package "vehicle" as vehicle {
+}
+package "water_object" as water_object {
+}
+log --> water_object
+main --> background
+main --> log
+main --> player
+main --> turtle
+main --> vehicle
+turtle --> water_object
+@enduml
